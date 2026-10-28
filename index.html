@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesar Lopez Barbero | Barbería en Herndon, VA</title>
+    <meta name="description" content="Barbería de alta calidad en Herndon, VA especializada en cortes de hombres y niños, degradados (fades), arreglos de barba y afeitados. Ubicado en el 2º Piso, 905 Alabama Dr. ¡Reserva tu cita en línea!">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        },
+                        slate: {
+                            850: '#131c2e',
+                            900: '#0f172a',
+                            950: '#080d1a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b1120;
+            color: #f1f5f9;
+        }
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-gold {
+            background: rgba(245, 158, 11, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn-gradient {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            transition: all 0.3s ease;
+        }
+        .gold-btn-gradient:hover {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+            transform: translateY(-2px);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-gold-500 selection:text-slate-950">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-gold-700 via-gold-600 to-amber-700 text-slate-950 text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+            <i class="fa-solid fa-location-dot animate-bounce"></i>
+            <span data-i18n="topBarNotice">Barbería en Herndon • Ubicado en el Piso 2 (Escaleras exteriores al lado derecho de la clínica dental)</span>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-card bg-slate-950/80 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-gold-600 to-amber-400 p-0.5 shadow-lg shadow-gold-500/20 group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
+                        <i class="fa-solid fa-scissors text-gold-400 text-xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-heading font-extrabold text-lg sm:text-xl tracking-tight text-white block leading-none">CESAR LOPEZ</span>
+                    <span class="text-xs font-medium tracking-widest text-gold-400 uppercase">BARBERO</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#home" class="hover:text-gold-400 transition-colors" data-i18n="navHome">Inicio</a>
+                <a href="#location" class="hover:text-gold-400 transition-colors" data-i18n="navLocation">Ubicación y Entrada</a>
+                <a href="#services" class="hover:text-gold-400 transition-colors" data-i18n="navServices">Servicios</a>
+                <a href="#estimator" class="hover:text-gold-400 transition-colors" data-i18n="navEstimator">Calculadora</a>
+                <a href="#hours" class="hover:text-gold-400 transition-colors" data-i18n="navHours">Horario</a>
+            </nav>
+
+            <!-- Actions Right -->
+            <div class="hidden sm:flex items-center gap-4">
+                <!-- Language Switcher Toggle -->
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900/80 hover:border-gold-500 text-xs font-semibold text-slate-200 transition-all">
+                    <i class="fa-solid fa-globe text-gold-400"></i>
+                    <span id="langText">EN</span>
+                </button>
+
+                <!-- Book Now Button -->
+                <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="gold-btn-gradient text-slate-950 font-bold px-5 py-2.5 rounded-xl text-sm shadow-md flex items-center gap-2">
+                    <i class="fa-solid fa-calendar-check text-slate-950"></i>
+                    <span data-i18n="bookNow">Reservar Cita</span>
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <div class="flex items-center gap-3 md:hidden">
+                <button onclick="toggleLanguage()" class="flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-slate-700 bg-slate-900 text-xs font-semibold text-slate-200">
+                    <i class="fa-solid fa-globe text-gold-400"></i>
+                    <span id="langTextMobile">EN</span>
+                </button>
+                <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 px-4 pt-3 pb-6 space-y-3">
+            <a href="#home" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 font-medium hover:text-gold-400" data-i18n="navHome">Inicio</a>
+            <a href="#location" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 font-medium hover:text-gold-400" data-i18n="navLocation">Ubicación y Entrada</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 font-medium hover:text-gold-400" data-i18n="navServices">Servicios</a>
+            <a href="#estimator" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 font-medium hover:text-gold-400" data-i18n="navEstimator">Calculadora de Precios</a>
+            <a href="#hours" onclick="toggleMobileMenu()" class="block py-2 text-slate-300 font-medium hover:text-gold-400" data-i18n="navHours">Horario e Información</a>
+            <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="w-full gold-btn-gradient text-slate-950 font-bold py-3 rounded-xl text-center block shadow-md mt-4" data-i18n="bookNow">
+                Reservar Cita en Booksy
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gold-600/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card-gold text-gold-400 text-xs sm:text-sm font-medium">
+                        <i class="fa-solid fa-crown text-gold-400"></i>
+                        <span data-i18n="heroBadge">La Mejor Experiencia de Barbería en Herndon</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-none">
+                        <span data-i18n="heroTitle1">Cortes de Alta Calidad &</span> <br class="hidden sm:inline" />
+                        <span class="gold-gradient-text" data-i18n="heroTitle2">Estilo Profesional</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-i18n="heroSubtitle">
+                        Especialistas en degradados (fades), arreglos de barba, perfilado a navaja y cortes para hombres y niños en Herndon, VA. Calidad y atención personalizada en un ambiente acogedor.
+                    </p>
+
+                    <!-- CTAs & Contact Row -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="w-full sm:w-auto gold-btn-gradient text-slate-950 font-extrabold px-8 py-4 rounded-xl text-base shadow-xl flex items-center justify-center gap-3">
+                            <i class="fa-solid fa-calendar-check text-slate-950 text-lg"></i>
+                            <span data-i18n="heroCtaBook">Reservar en Booksy</span>
+                        </a>
+
+                        <a href="tel:7039098053" class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-700 bg-slate-900/60 hover:bg-slate-800 text-slate-200 font-semibold text-base transition-colors flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-phone text-gold-400"></i>
+                            <span>(703) 909-8053</span>
+                        </a>
+                    </div>
+
+                    <!-- Value Badges -->
+                    <div class="pt-6 grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3 border border-slate-800">
+                            <i class="fa-solid fa-clock text-gold-400 text-xl"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium" data-i18n="badgeApptLabel">Reserva</p>
+                                <p class="text-xs font-bold text-slate-200" data-i18n="badgeApptVal">Por Cita Previa</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3 border border-slate-800">
+                            <i class="fa-solid fa-square-parking text-gold-400 text-xl"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium" data-i18n="badgeParkLabel">Estacionamiento</p>
+                                <p class="text-xs font-bold text-slate-200" data-i18n="badgeParkVal">Gratis en el Sitio</p>
+                            </div>
+                        </div>
+                        <div class="glass-card p-3 rounded-xl flex items-center gap-3 border border-slate-800 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-heart text-gold-400 text-xl"></i>
+                            <div>
+                                <p class="text-xs text-slate-400 font-medium" data-i18n="badgeOwnershipLabel">Comunidad</p>
+                                <p class="text-xs font-bold text-slate-200" data-i18n="badgeOwnershipVal">Propietario Latino</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Image Showcase -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-r from-gold-600 to-amber-500 opacity-30 blur-xl"></div>
+                        
+                        <div class="relative glass-card rounded-3xl p-6 overflow-hidden border border-slate-700/80 shadow-2xl space-y-6">
+                            <div class="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-slate-900 flex items-center justify-center group">
+                                <img src="IMG_0921.jpg" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/fbbf24?text=Cesar+Lopez+Barbero+Building';" alt="Edificio Cesar Lopez Barbero Herndon" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent"></div>
+                                <div class="absolute bottom-3 left-3 right-3 bg-slate-950/90 backdrop-blur-md p-3 rounded-xl border border-slate-800 flex items-center justify-between">
+                                    <div class="flex items-center gap-2">
+                                        <div class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                                        <span class="text-xs font-semibold text-slate-200" data-i18n="heroLocationTag">Herndon, Entrada Piso 2</span>
+                                    </div>
+                                    <span class="text-[10px] uppercase font-bold text-gold-400 bg-gold-500/10 px-2 py-0.5 rounded border border-gold-500/30">Verificado</span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="font-bold text-lg text-white">Cesar Lopez Barbero</h3>
+                                    <div class="flex text-amber-400 text-xs gap-1">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <span class="text-slate-300 font-bold ml-1">5.0</span>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-slate-300 leading-relaxed" data-i18n="heroCardDesc">
+                                    Servicio profesional de cortes, degradados y barba en Herndon desde 2021. Encuéntrenos en el 2º piso sobre la clínica dental.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & ENTRANCE WAYFINDING SECTION -->
+    <section id="location" class="py-16 bg-slate-900 relative border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="glass-card-gold rounded-3xl p-6 sm:p-10 border border-gold-500/30 shadow-2xl relative overflow-hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Directions Info -->
+                    <div class="lg:col-span-7 space-y-5">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-gold-500/20 text-gold-400 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-compass"></i>
+                            <span data-i18n="wayfindingTitle">Guía de Ubicación y Entrada</span>
+                        </div>
+
+                        <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-i18n="wayfindingHeading">
+                            ¿Cómo Encontrar la Entrada de la Barbería?
+                        </h2>
+
+                        <!-- Highlighted Step Box -->
+                        <div class="bg-slate-950/80 p-5 rounded-2xl border border-gold-500/40 space-y-3">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center font-extrabold text-lg shrink-0 mt-0.5">
+                                    2º
+                                </div>
+                                <div class="space-y-1">
+                                    <p class="text-xs font-bold text-gold-400 uppercase tracking-wider" data-i18n="wayfindingFloorTag">Instrucciones para el Segundo Piso</p>
+                                    <p class="text-slate-100 font-semibold text-base sm:text-lg leading-snug" data-i18n="wayfindingInstructions">
+                                        "Encuéntrenos fácilmente en el segundo piso: suba por las escaleras exteriores ubicadas al lado derecho de la clínica dental."
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Address Details -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i class="fa-solid fa-map-pin text-gold-400 text-lg"></i>
+                                <div>
+                                    <p class="text-xs text-slate-400" data-i18n="addressLabel">Dirección</p>
+                                    <p class="font-bold text-white">905 Alabama Dr, Piso 2, Herndon, VA 20170</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3 text-slate-300">
+                                <i class="fa-solid fa-square-parking text-gold-400 text-lg"></i>
+                                <div>
+                                    <p class="text-xs text-slate-400" data-i18n="parkingLabel">Estacionamiento</p>
+                                    <p class="font-bold text-white" data-i18n="parkingDetail">Parqueadero Gratuito Frente al Edificio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons for maps and phone -->
+                        <div class="flex flex-wrap items-center gap-4 pt-2">
+                            <a href="https://maps.google.com/maps?cid=16887171935867100419" target="_blank" rel="noopener" class="gold-btn-gradient text-slate-950 font-bold px-6 py-3 rounded-xl text-sm flex items-center gap-2 shadow-lg">
+                                <i class="fa-solid fa-diamond-turn-right text-slate-950"></i>
+                                <span data-i18n="btnGoogleMaps">Abrir en Google Maps</span>
+                            </a>
+
+                            <a href="tel:7039098053" class="bg-slate-900 border border-slate-700 hover:border-gold-500 text-slate-200 font-semibold px-5 py-3 rounded-xl text-sm flex items-center gap-2 transition-colors">
+                                <i class="fa-solid fa-phone text-gold-400"></i>
+                                <span data-i18n="btnCallUs">Llamar al (703) 909-8053</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Visual Step-by-Step Wayfinding Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-slate-950/90 rounded-2xl p-5 border border-slate-800 space-y-4">
+                            <h3 class="text-sm font-bold text-gold-400 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-signs-post"></i>
+                                <span data-i18n="stepsHeading">3 Pasos Rápidos al Llegar</span>
+                            </h3>
+
+                            <div class="space-y-3 text-xs sm:text-sm">
+                                <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="w-7 h-7 rounded-lg bg-slate-800 text-gold-400 font-bold flex items-center justify-center shrink-0">1</div>
+                                    <span class="text-slate-200" data-i18n="step1">Estaciónese en el parqueadero gratuito del edificio en 905 Alabama Dr.</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800">
+                                    <div class="w-7 h-7 rounded-lg bg-slate-800 text-gold-400 font-bold flex items-center justify-center shrink-0">2</div>
+                                    <span class="text-slate-200" data-i18n="step2">Busque la entrada de la Clínica Dental en la primera planta.</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-2.5 rounded-xl bg-gold-500/10 border border-gold-500/30">
+                                    <div class="w-7 h-7 rounded-lg bg-gold-500 text-slate-950 font-bold flex items-center justify-center shrink-0">3</div>
+                                    <span class="text-gold-300 font-semibold" data-i18n="step3">Suba por las escaleras exteriores a la DERECHA de la clínica dental al Piso 2.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SERVICES MENU SECTION -->
+    <section id="services" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-3 mb-12">
+                <p class="text-gold-400 font-semibold text-xs uppercase tracking-widest" data-i18n="servicesSubtitle">Calidad y Estilo</p>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white" data-i18n="servicesTitle">Servicios y Cortes</h2>
+                <p class="text-slate-400 text-sm sm:text-base" data-i18n="servicesDesc">Seleccione el servicio que desea y reserve su cita directamente en Booksy.</p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Service 1: Custom Haircut & Fade -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceFadeTitle">Corte Degradado (Fade) / Personalizado</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">30-45 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceFadeDesc">
+                                Corte fade alto, medio, bajo, taper o tijera terminado con marcado a navaja y peinado.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 2: Beard Maintenance & Trim -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-user-ninja text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceBeardTitle">Arreglo y Delineado de Barba</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">20-30 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceBeardDesc">
+                                Recorte de barba, perfilado con navaja, bordes limpios y tratamiento de aceite hidratante.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 3: Haircut & Beard Combo -->
+                <div class="glass-card-gold rounded-2xl p-6 border border-gold-500/40 transition-all duration-300 group flex flex-col justify-between relative">
+                    <div class="absolute -top-3 right-4 bg-gold-500 text-slate-950 text-[10px] font-black uppercase tracking-wider px-2.5 py-0.5 rounded-full shadow-md">
+                        Más Popular
+                    </div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500 text-slate-950 flex items-center justify-center group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-crown text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceComboTitle">Combo Completo (Corte + Barba)</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">50-60 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceComboDesc">
+                                Paquete completo: Corte o Fade exclusivo con perfilado de barba, navaja y acabado de toalla caliente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5 shadow-md">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 4: Kids' Haircut -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-child text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceKidsTitle">Corte para Niños (Kids' Cut)</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">30 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceKidsDesc">
+                                Corte paciente y de alta calidad para niños en un ambiente cómodo, tranquilo y amigable.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 5: Scissor Cut / Long Hair -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-scissors text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceScissorTitle">Corte con Tijera / Cabello Largo</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">40 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceScissorDesc">
+                                Trabajo completo a tijera para estilos largos, cortes en capas, texturizado y forma precisa.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 6: Head Shave & Hot Towel -->
+                <div class="glass-card rounded-2xl p-6 border border-slate-800 hover:border-gold-500/50 transition-all duration-300 group flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-hot-tub-person text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-xl text-white group-hover:text-gold-400 transition-colors" data-i18n="serviceShaveTitle">Afeitado de Cabeza con Toalla Caliente</h3>
+                                <span class="text-xs bg-slate-800 text-slate-300 px-2.5 py-1 rounded-full font-medium">35 min</span>
+                            </div>
+                            <p class="text-slate-400 text-xs sm:text-sm mt-2 leading-relaxed" data-i18n="serviceShaveDesc">
+                                Afeitado suave de cabeza con navaja o máquina, espuma relajante con toalla caliente e hidratación.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="pt-6 mt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs text-gold-400 font-semibold" data-i18n="serviceApptTag">Solo con Cita</span>
+                        <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="text-xs font-bold text-slate-950 bg-gold-400 hover:bg-gold-300 px-4 py-2 rounded-lg transition-colors flex items-center gap-1.5">
+                            <span data-i18n="serviceBookBtn">Reservar Servicio</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE ESTIMATOR & BOOKING CALCULATOR WIDGET -->
+    <section id="estimator" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl space-y-8">
+                
+                <div class="text-center space-y-2">
+                    <span class="text-gold-400 text-xs font-bold uppercase tracking-widest" data-i18n="estTag">Herramienta Interactiva</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white" data-i18n="estTitle">Calculadora de Tiempo y Precio</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm" data-i18n="estDesc">Seleccione los servicios para calcular el costo y tiempo estimado antes de reservar.</p>
+                </div>
+
+                <!-- Checkbox Selection List -->
+                <div class="space-y-3">
+                    
+                    <label class="flex items-center justify-between p-4 rounded-xl bg-slate-950/80 border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" onchange="calculateEstimate()" class="service-checkbox w-5 h-5 rounded border-slate-700 text-gold-500 focus:ring-gold-500 bg-slate-900" data-time="35" data-price="35" data-name="Fade / Corte Personalizado">
+                            <div>
+                                <p class="font-bold text-white text-sm sm:text-base">Corte Personalizado / Fade Cut</p>
+                                <p class="text-xs text-slate-400">Skin fade, taper, corte a tijera y navaja</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm font-bold text-gold-400">~$35 - $40</span>
+                            <p class="text-[10px] text-slate-400">35 mins</p>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center justify-between p-4 rounded-xl bg-slate-950/80 border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" onchange="calculateEstimate()" class="service-checkbox w-5 h-5 rounded border-slate-700 text-gold-500 focus:ring-gold-500 bg-slate-900" data-time="25" data-price="25" data-name="Arreglo de Barba">
+                            <div>
+                                <p class="font-bold text-white text-sm sm:text-base">Perfilado y Arreglo de Barba</p>
+                                <p class="text-xs text-slate-400">Recorte, navaja y aceite hidratante</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm font-bold text-gold-400">~$25</span>
+                            <p class="text-[10px] text-slate-400">25 mins</p>
+                        </div>
+                    </label>
+
+                    <label class="flex items-center justify-between p-4 rounded-xl bg-slate-950/80 border border-slate-800 cursor-pointer hover:border-gold-500/50 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <input type="checkbox" onchange="calculateEstimate()" class="service-checkbox w-5 h-5 rounded border-slate-700 text-gold-500 focus:ring-gold-500 bg-slate-900" data-time="30" data-price="30" data-name="Corte de Niños">
+                            <div>
+                                <p class="font-bold text-white text-sm sm:text-base">Corte para Niños (Kids' Cut)</p>
+                                <p class="text-xs text-slate-400">Corte limpio y paciente</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-sm font-bold text-gold-400">~$30</span>
+                            <p class="text-[10px] text-slate-400">30 mins</p>
+                        </div>
+                    </label>
+
+                </div>
+
+                <!-- Live Summary Display -->
+                <div class="bg-slate-950 p-5 rounded-2xl border border-gold-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs text-slate-400 uppercase tracking-wider font-semibold" data-i18n="estSummaryLabel">Total Estimado</p>
+                        <div class="flex items-baseline gap-3">
+                            <span id="estPriceDisplay" class="text-2xl sm:text-3xl font-extrabold text-gold-400">$0</span>
+                            <span id="estTimeDisplay" class="text-xs font-medium text-slate-300">(0 mins)</span>
+                        </div>
+                    </div>
+
+                    <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="w-full sm:w-auto gold-btn-gradient text-slate-950 font-extrabold px-6 py-3.5 rounded-xl text-sm flex items-center justify-center gap-2 shadow-lg">
+                        <span data-i18n="estBtnProceed">Continuar a Reservar en Booksy</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- HOURS & BUSINESS INFO -->
+    <section id="hours" class="py-20 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                
+                <!-- Business Hours Card -->
+                <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center text-gold-400">
+                                <i class="fa-regular fa-clock text-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-white" data-i18n="hoursTitle">Horario de Atención</h3>
+                                <p class="text-xs text-slate-400" data-i18n="hoursSub">Programe su cita en línea</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3 divide-y divide-slate-800/80 text-sm">
+                            <div class="flex justify-between items-center pt-2">
+                                <span class="text-slate-300 font-medium">Lunes</span>
+                                <span class="font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-md border border-gold-500/20">9:00 AM – 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-500">Martes</span>
+                                <span class="text-slate-500 font-medium bg-slate-900 px-3 py-1 rounded-md">Cerrado</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-300 font-medium">Miércoles</span>
+                                <span class="font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-md border border-gold-500/20">9:00 AM – 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-300 font-medium">Jueves</span>
+                                <span class="font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-md border border-gold-500/20">9:00 AM – 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-300 font-medium">Viernes</span>
+                                <span class="font-bold text-gold-400 bg-gold-500/10 px-3 py-1 rounded-md border border-gold-500/20">9:00 AM – 8:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-300 font-medium">Sábado</span>
+                                <span class="font-bold text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-md border border-emerald-500/20">6:00 AM – 5:00 PM</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-3">
+                                <span class="text-slate-500">Domingo</span>
+                                <span class="text-slate-500 font-medium bg-slate-900 px-3 py-1 rounded-md">Cerrado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-400 flex items-center gap-3">
+                        <i class="fa-solid fa-circle-info text-gold-400 text-lg"></i>
+                        <span data-i18n="hoursNote">Se requiere cita previa para garantizar su turno sin esperas.</span>
+                    </div>
+                </div>
+
+                <!-- Google Reviews & Reputation Card -->
+                <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-6 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-brands fa-google text-2xl text-blue-400"></i>
+                                <span class="font-bold text-white text-lg">Reseñas en Google</span>
+                            </div>
+                            <span class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2.5 py-1 rounded-full font-bold">5.0 Estrellas</span>
+                        </div>
+
+                        <!-- Big Rating Callout -->
+                        <div class="bg-slate-950 p-6 rounded-2xl border border-slate-800 flex items-center gap-6">
+                            <div class="text-center border-r border-slate-800 pr-6">
+                                <span class="text-4xl sm:text-5xl font-black text-white">5.0</span>
+                                <div class="flex text-amber-400 text-xs gap-1 mt-1">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-sm font-bold text-white" data-i18n="reviewHeadline">100% Satisfacción del Cliente</p>
+                                <p class="text-xs text-slate-400" data-i18n="reviewSub">Los clientes de Herndon confían en Cesar Lopez por su precisión constante, cortes degradados impecables y atención al detalle.</p>
+                            </div>
+                        </div>
+
+                        <!-- Sample Client Review Quote -->
+                        <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800/80 italic text-xs sm:text-sm text-slate-300 relative">
+                            <i class="fa-solid fa-quote-left text-gold-500/20 text-3xl absolute top-2 right-3"></i>
+                            <p>"¡El mejor barbero en Herndon! Cesar siempre se toma su tiempo para dejar el fade perfecto. Las escaleras a la derecha de la clínica dental llevan directo a su local en el 2º piso."</p>
+                            <p class="not-italic text-xs font-bold text-gold-400 mt-2">— Cliente Local</p>
+                        </div>
+                    </div>
+
+                    <a href="https://maps.google.com/maps?cid=16887171935867100419" target="_blank" rel="noopener" class="w-full bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-bold py-3.5 rounded-xl text-xs sm:text-sm text-center flex items-center justify-center gap-2 transition-colors">
+                        <i class="fa-brands fa-google text-amber-400"></i>
+                        <span data-i18n="btnLeaveReview">Dejar Opinión en Google</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800/80 py-12 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-800">
+                <!-- Brand -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold-500 text-slate-950 flex items-center justify-center font-bold text-xl">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <div>
+                        <span class="font-heading font-extrabold text-base text-white block">CESAR LOPEZ BARBERO</span>
+                        <span class="text-[10px] text-gold-400 tracking-wider uppercase">Herndon, Virginia • Piso 2</span>
+                    </div>
+                </div>
+
+                <!-- Footer Quick Nav -->
+                <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-300">
+                    <a href="#home" class="hover:text-gold-400 transition-colors" data-i18n="navHome">Inicio</a>
+                    <a href="#location" class="hover:text-gold-400 transition-colors" data-i18n="navLocation">Ubicación</a>
+                    <a href="#services" class="hover:text-gold-400 transition-colors" data-i18n="navServices">Servicios</a>
+                    <a href="#estimator" class="hover:text-gold-400 transition-colors" data-i18n="navEstimator">Calculadora</a>
+                    <a href="#hours" class="hover:text-gold-400 transition-colors" data-i18n="navHours">Horario</a>
+                </div>
+
+                <!-- Action Button -->
+                <a href="http://cesarlopezbarbero.booksy.com/a/" target="_blank" rel="noopener" class="gold-btn-gradient text-slate-950 font-bold px-4 py-2 rounded-lg text-xs" data-i18n="bookNow">
+                    Reservar Cita
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-[11px]">
+                <p>© 2026 Cesar Lopez Barbero. Todos los derechos reservados. 905 Alabama Dr, Piso 2, Herndon, VA 20170.</p>
+                <p>Teléfono: (703) 909-8053 | Escaleras exteriores al lado derecho de la clínica dental</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR BILINGUAL TOGGLE (SPANISH DEFAULT), CALCULATOR, & MOBILE MENU -->
+    <script>
+        // Language Dictionary
+        const translations = {
+            es: {
+                topBarNotice: "Barbería en Herndon • Ubicado en el Piso 2 (Escaleras exteriores al lado derecho de la clínica dental)",
+                navHome: "Inicio",
+                navLocation: "Ubicación y Entrada",
+                navServices: "Servicios",
+                navEstimator: "Calculadora de Precios",
+                navHours: "Horario",
+                bookNow: "Reservar Cita",
+                heroBadge: "La Mejor Experiencia de Barbería en Herndon",
+                heroTitle1: "Cortes de Alta Calidad &",
+                heroTitle2: "Estilo Profesional",
+                heroSubtitle: "Especialistas en degradados (fades), arreglos de barba, perfilado a navaja y cortes para hombres y niños en Herndon, VA. Calidad y atención personalizada en un ambiente acogedor.",
+                heroCtaBook: "Reservar en Booksy",
+                badgeApptLabel: "Reserva",
+                badgeApptVal: "Por Cita Previa",
+                badgeParkLabel: "Estacionamiento",
+                badgeParkVal: "Gratis en el Sitio",
+                badgeOwnershipLabel: "Comunidad",
+                badgeOwnershipVal: "Propietario Latino",
+                heroLocationTag: "Herndon, Entrada Piso 2",
+                heroCardDesc: "Servicio profesional de cortes, degradados y barba en Herndon desde 2021. Encuéntrenos en el 2º piso sobre la clínica dental.",
+                wayfindingTitle: "Guía de Ubicación y Entrada",
+                wayfindingHeading: "¿Cómo Encontrar la Entrada de la Barbería?",
+                wayfindingFloorTag: "Instrucciones para el Segundo Piso",
+                wayfindingInstructions: "Encuéntrenos fácilmente en el segundo piso: suba por las escaleras exteriores ubicadas al lado derecho de la clínica dental.",
+                addressLabel: "Dirección",
+                parkingLabel: "Estacionamiento",
+                parkingDetail: "Parqueadero Gratuito Frente al Edificio",
+                btnGoogleMaps: "Abrir en Google Maps",
+                btnCallUs: "Llamar al (703) 909-8053",
+                stepsHeading: "3 Pasos Rápidos al Llegar",
+                step1: "Estaciónese en el parqueadero gratuito del edificio en 905 Alabama Dr.",
+                step2: "Busque la entrada de la Clínica Dental en la primera planta.",
+                step3: "Suba por las escaleras exteriores a la DERECHA de la clínica dental al Piso 2.",
+                servicesSubtitle: "Calidad y Estilo",
+                servicesTitle: "Servicios y Cortes",
+                servicesDesc: "Seleccione el servicio que desea y reserve su cita directamente en Booksy.",
+                serviceFadeTitle: "Corte Degradado (Fade) / Personalizado",
+                serviceFadeDesc: "Corte fade alto, medio, bajo, taper o tijera terminado con marcado a navaja y peinado.",
+                serviceBeardTitle: "Arreglo y Delineado de Barba",
+                serviceBeardDesc: "Recorte de barba, perfilado con navaja, bordes limpios y tratamiento de aceite hidratante.",
+                serviceComboTitle: "Combo Completo (Corte + Barba)",
+                serviceComboDesc: "Paquete completo: Corte o Fade exclusivo con perfilado de barba, navaja y acabado de toalla caliente.",
+                serviceKidsTitle: "Corte para Niños (Kids' Cut)",
+                serviceKidsDesc: "Corte paciente y de alta calidad para niños en un ambiente cómodo, tranquilo y amigable.",
+                serviceScissorTitle: "Corte con Tijera / Cabello Largo",
+                serviceScissorDesc: "Trabajo completo a tijera para estilos largos, cortes en capas, texturizado y forma precisa.",
+                serviceShaveTitle: "Afeitado de Cabeza con Toalla Caliente",
+                serviceShaveDesc: "Afeitado suave de cabeza con navaja o máquina, espuma relajante con toalla caliente e hidratación.",
+                serviceApptTag: "Solo con Cita",
+                serviceBookBtn: "Reservar Servicio",
+                estTag: "Herramienta Interactiva",
+                estTitle: "Calculadora de Tiempo y Precio",
+                estDesc: "Seleccione los servicios para calcular el costo y tiempo estimado antes de reservar.",
+                estSummaryLabel: "Total Estimado",
+                estBtnProceed: "Continuar a Reservar en Booksy",
+                hoursTitle: "Horario de Atención",
+                hoursSub: "Programe su cita en línea",
+                hoursNote: "Se requiere cita previa para garantizar su turno sin esperas.",
+                reviewHeadline: "100% Satisfacción del Cliente",
+                reviewSub: "Los clientes de Herndon confían en Cesar Lopez por su precisión constante, cortes degradados impecables y atención al detalle.",
+                btnLeaveReview: "Dejar Opinión en Google"
+            },
+            en: {
+                topBarNotice: "Herndon Barber Shop • Located on Floor 2 (Outdoor stairs next to dental clinic)",
+                navHome: "Home",
+                navLocation: "Location & Stairs",
+                navServices: "Services",
+                navEstimator: "Price Calculator",
+                navHours: "Hours",
+                bookNow: "Book Now",
+                heroBadge: "Herndon's Premier Grooming Experience",
+                heroTitle1: "Precision Cuts &",
+                heroTitle2: "Master Grooming",
+                heroSubtitle: "Tailored fades, clean razor work, beard sculpting, and kids' haircuts in a relaxed, top-tier environment. Experience the highest level of craftsmanship in Herndon, VA.",
+                heroCtaBook: "Book on Booksy",
+                badgeApptLabel: "Booking",
+                badgeApptVal: "By Appointment",
+                badgeParkLabel: "Parking",
+                badgeParkVal: "Free Onsite Lot",
+                badgeOwnershipLabel: "Community",
+                badgeOwnershipVal: "Latinx-Owned",
+                heroLocationTag: "Herndon, Floor 2 Entrance",
+                heroCardDesc: "Providing master-level cuts, fades, and beard care in Herndon since 2021. Easy access on the 2nd floor above the dental clinic.",
+                wayfindingTitle: "Entrance & Location Guide",
+                wayfindingHeading: "How to Find Our Shop Entrance",
+                wayfindingFloorTag: "2nd Floor Instructions",
+                wayfindingInstructions: "Easily find us on the 2nd floor — take the outdoor stairs located on the right side of the dental clinic.",
+                addressLabel: "Address",
+                parkingLabel: "Parking",
+                parkingDetail: "Free Parking Lot Directly in Front",
+                btnGoogleMaps: "Open in Google Maps",
+                btnCallUs: "Call (703) 909-8053",
+                stepsHeading: "3 Quick Steps Upon Arrival",
+                step1: "Park in the free building parking lot at 905 Alabama Dr.",
+                step2: "Look for the Dental Clinic entrance on the ground floor.",
+                step3: "Walk up the outdoor stairs on the RIGHT side of the dental clinic to Floor 2!",
+                servicesSubtitle: "Craftsmanship & Precision",
+                servicesTitle: "Services & Haircuts",
+                servicesDesc: "Select your desired haircut or beard styling service and book seamlessly on Booksy.",
+                serviceFadeTitle: "Fade Cut / Custom Haircut",
+                serviceFadeDesc: "High, mid, or low fade, taper, skin fade, or classic scissor haircut finished with razor neck line and styling.",
+                serviceBeardTitle: "Beard Trim & Line Up",
+                serviceBeardDesc: "Beard sculpting, length trimming, clean straight razor edges, and hydrating oil treatment.",
+                serviceComboTitle: "Full Grooming Combo",
+                serviceComboDesc: "Complete package: Signature Haircut/Fade paired with full beard shaping, razor line, hot towel finish.",
+                serviceKidsTitle: "Kids' Cut / Corte de Niños",
+                serviceKidsDesc: "Patient, high-quality haircut for children in a comfortable, friendly environment.",
+                serviceScissorTitle: "Scissor Cut & Long Hair",
+                serviceScissorDesc: "Full shear work for longer styles, layered cuts, texturizing, and precise hair shaping.",
+                serviceShaveTitle: "Head Shave & Hot Towel",
+                serviceShaveDesc: "Smooth foil/razor head shave accompanied by relaxing hot towel lather and scalp conditioning.",
+                serviceApptTag: "Appointment Only",
+                serviceBookBtn: "Book Service",
+                estTag: "Interactive Tool",
+                estTitle: "Service Duration & Price Estimator",
+                estDesc: "Select the services you need to calculate your estimated appointment time before booking.",
+                estSummaryLabel: "Estimated Total",
+                estBtnProceed: "Proceed to Book on Booksy",
+                hoursTitle: "Hours of Operation",
+                hoursSub: "Schedule your appointment online",
+                hoursNote: "Appointments are required to guarantee your spot without wait times.",
+                reviewHeadline: "100% Client Satisfaction",
+                reviewSub: "Herndon clients trust Cesar Lopez for consistent precision, clean fade work, and attention to detail.",
+                btnLeaveReview: "Leave a Review on Google"
+            }
+        };
+
+        // DEFAULT LANGUAGE SET TO SPANISH ('es')
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            
+            // Update Toggle Button Labels
+            document.getElementById('langText').innerText = currentLang === 'es' ? 'EN' : 'ES';
+            document.getElementById('langTextMobile').innerText = currentLang === 'es' ? 'EN' : 'ES';
+
+            // Replace text for elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang] && translations[currentLang][key]) {
+                    element.innerText = translations[currentLang][key];
+                }
+            });
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function calculateEstimate() {
+            const checkboxes = document.querySelectorAll('.service-checkbox:checked');
+            let totalTime = 0;
+            let totalPrice = 0;
+
+            checkboxes.forEach(cb => {
+                totalTime += parseInt(cb.getAttribute('data-time')) || 0;
+                totalPrice += parseInt(cb.getAttribute('data-price')) || 0;
+            });
+
+            document.getElementById('estPriceDisplay').innerText = `$${totalPrice}`;
+            document.getElementById('estTimeDisplay').innerText = `(~${totalTime} mins)`;
+        }
+    </script>
+</body>
+</html>
